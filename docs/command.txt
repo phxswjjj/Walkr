@@ -1,0 +1,26 @@
+exit
+dnconsole list2
+dnconsole action --index 7
+dnconsole adb --name Sdorica1-FB --command "shell pm list packages"
+rem no work
+dnconsole adb --index 7 --command "shell pm list packages"
+rem 啟動 app
+dnconsole runapp --index 7 --packagename com.rayark.sdorica
+rem list 第3方套件
+ld -s 7 pm list packages -3
+com.rayark.sdorica
+com.fourdesire.spacewalk
+rem 返回
+ld -s 7 setprop call.keyboard back
+ld -s 7 setprop call.keyboard home
+ld -s 7 setprop call.keyboard 3
+ld -s 7 setprop call.keyboard volumedown
+ld -s 4 setprop call.shake null
+
+rem adb 指令
+rem http://adbshell.com/commands/adb-shell-pm-list-packages
+
+rem adb keyboard
+rem https://stackoverflow.com/questions/7789826/adb-shell-input-events
+
+rem D:\Changzhi\dnplayer-tw
